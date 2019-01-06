@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==2.1"
 "psycopg2" = "*"
 djangorestframework = "*"
+django = "==2.1.2"
 
 [dev-packages]
 "autopep8" = "*"
