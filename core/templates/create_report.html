@@ -6,25 +6,25 @@
 <div id="wrapper">
 
 <div>
-// Report Title and Email Subject 
-<h2> What type of report would you like to file? </h2.>
-<input type="checkbox" isActive=true id="hateCrime"><p>Hate Crime Report</p>
-<input type="checkbox" isActive=true id="policeBrut"><p>Police Brutality Report</p>
-<input type="checkbox" isActive=true id="civilRights"><p>Civil Rights Violation Report</p>
+<h2> What type of report would you like to file? </h2>
+<span><input type="radio" isActive=true id="hateCrime"><p isActive=true id="hateCrime">Hate Crime Report</p></span>
+<input type="radio" isActive=true id="policeBrut"><p isActive=true id="policeBrut">Police Brutality Report</p>
+<input type="radio" isActive=true id="civilRights"><p isActive=true id="civilRights" >Civil Rights Violation Report</p>
 </div>
 
 <div>
-<h2> These are the groups that handle those reports </h2>
+<h2> Who would you like to send your report to? </h2>
 <p>Optional: deselect any groups you would not like to include in your email</p>
-<input type="checkbox" isActive=false id="hateCrime"><p>Mayor of Durham</p>
-<input type="checkbox" isActive=false id="hateCrime"><p>Southern </p>
+<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Mayor of Durham</p>
+<input type="checkbox" isActive=false id="hateCrime" checked><p isActive=false id="hateCrime">Southern Poverty Law Center</p>
 
-<input type="checkbox" isActive=false id="policeBrut"><p>Civilian Police Board Review</p>
-<input type="checkbox" isActive=false id="policeBrut"><p>Southern Coalition for Social Justice</p>
+<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Civilian Police Board Review</p>
+<input type="checkbox" isActive=false id="policeBrut" checked><p isActive=false id="policeBrut">Southern Coalition for Social Justice</p>
 
-<input type="checkbox" isActive=false id="civilRights"><p>NAACP</p>
-<input type="checkbox" isActive=false id="civilRights"><p>ACLLU</p>
+<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">NAACP</p>
+<input type="checkbox" isActive=false id="civilRights" checked><p isActive=false id="civilRights">ACLLU</p>
 </div>
+
 
 <div id="hateCrime" isActive=false>
     {{ report.title }}
@@ -45,6 +45,8 @@
 </div>
 
   <form id="sumbit-screenshot" method="POST">
+    <input type= "text" input type="hidden" id="emailRecipients" maxlength= "500" placeholder="Email Recipients">
+    <textarea id="emailBody" maxlength="5000" cols="40" rows="5" placeholder="Additional details about the incident"></textarea>
     {% csrf_token %}
     <input id="new-screenshot" type="image" src="#"></input>
   </form>
